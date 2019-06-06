@@ -1,0 +1,65 @@
+﻿<Window x:Class="DownloadingFromInternet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DownloadingFromInternet"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0 5 0 0"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0 5 0 0"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5 5 0 0"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="120"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="AlternatingRowBackground" Value="WhiteSmoke"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="GridLinesVisibility" Value="Vertical"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Loading random picture from site" Margin="5" Grid.Column="0" Grid.Row="0"/>
+        <TextBlock Text="Loading mp3 from site" Margin="5" Grid.Column="1" Grid.Row="0"/>
+
+        <Button Name="LoadMp3" Content="Load mp3 file" Margin="5" Grid.Column="0" Grid.Row="1"/>
+        <Button Name="LoadPic" Content="Load picture" Margin="5" Grid.Column="1" Grid.Row="1" Click="LoadPic_Click"/>
+
+        <Image Name="PictureBox1"  Margin="5" Grid.Column="1" Grid.Row="3"/>
+        <TextBlock Margin="5" Grid.Column="1" Grid.Row="2"/>
+        <StackPanel Orientation="Horizontal" Margin="5" Grid.Column="0" Grid.Row="3">
+            <Button Name="btnPlay" Margin="5" Content="Play"/>
+            <Button Name="btnPause" Margin="5" Content="Pause"/>
+            <Button Name="btnStop" Margin="5" Content="Stop"/>
+        </StackPanel>    
+
+    </Grid>
+</Window>
